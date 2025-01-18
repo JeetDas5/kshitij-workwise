@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Search, Filter, ChevronDown, Eye, PlusCircle, FileText, Clock, Calendar, Bell } from 'lucide-react';
 import rfqData from '../data/rfq-data.json';
 import Header from '../components/global/Header';
+import { useNavigate } from "react-router-dom";
 
 const StatCard = ({ title, value, change, negative, positive }) => {
   return (
@@ -53,6 +54,13 @@ const StatusBadge = ({ status }) => {
 };
 
 const RFQTable = ({ data }) => {
+
+  const navigate = useNavigate();
+
+  const handleViewClick = (id) => {
+    navigate(`/view/${id}`);
+  };
+
   return (
     <div className="bg-white rounded-lg shadow-sm border border-slate-200 overflow-hidden">
       <div className="overflow-x-auto">
@@ -103,7 +111,7 @@ const RFQTable = ({ data }) => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center space-x-3">
-                    <button className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                    <button className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center" onClick={() => handleViewClick(rfq.id)}>
                       <Eye className="w-4 h-4 mr-1" />
                       View
                     </button>
@@ -153,6 +161,7 @@ const RFQManagement = () => {
     setFilteredData(filtered);
   };
 
+  
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <Header/>
