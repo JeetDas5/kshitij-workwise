@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Search, Filter, ChevronDown, Eye, PlusCircle, FileText, Clock, Calendar, Bell } from 'lucide-react';
 import rfqData from '../data/rfq-data.json';
