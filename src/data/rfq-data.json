@@ -1,0 +1,40 @@
+{
+  "rfqs": [
+    {
+      "id": "402535",
+      "product": "FLANGE (MS) /Mild Steel Flange",
+      "publishedDate": "06/01/2025",
+      "endDate": "05/02/2025",
+      "status": "active",
+      "type": "Budgetary",
+      "reverseAuction": "Enabled"
+    },
+    {
+      "id": "402536",
+      "product": "Steel Pipes /Carbon Steel",
+      "publishedDate": "07/01/2025",
+      "endDate": "06/02/2025",
+      "status": "pending",
+      "type": "Firm",
+      "reverseAuction": "Disabled"
+    },
+    {
+      "id": "402537",
+      "product": "Valves /Butterfly Valves",
+      "publishedDate": "08/01/2025",
+      "endDate": "07/02/2025",
+      "status": "completed",
+      "type": "Budgetary",
+      "reverseAuction": "Enabled"
+    },
+    {
+      "id": "402538",
+      "product": "Bearings /Ball Bearings",
+      "publishedDate": "09/01/2025",
+      "endDate": "08/02/2025",
+      "status": "active",
+      "type": "Firm",
+      "reverseAuction": "Disabled"
+    }
+  ]
+}

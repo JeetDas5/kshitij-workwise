@@ -1,71 +1,72 @@
-import { Link, useLocation } from "react-router-dom";
-import { Menu,UserRound } from "lucide-react";
-import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { BarChart3, Bell, User, FileText, Settings } from "lucide-react";
 
-export default function Header() {
-  const location = useLocation();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const isActive = (path) =>
-    location.pathname === path
-      ? "text-blue-500 font-semibold border-b-2 border-blue-500"
-      : "text-gray-700 hover:text-[#5046e5]";
-
+function NavItem({ to, children, icon }) {
   return (
-    <div className="flex justify-between items-center border-2 p-2 m-4 border-black rounded-lg h-16 font-poppins">
-      <div className="font-bold text-xl">
-        <img src="/logo.webp" alt="logo" className="h-12 w-auto" />
-      </div>
-      <div className="hidden lg:flex gap-4 text-lg">
-        <Link to="/dashboard" className={isActive("/dashboard")}>
-          Dashboard
-        </Link>
-        <Link to="/rfq-creation" className={isActive("/rfq-creation")}>
-          RFQ Creation
-        </Link>
-        <Link to="/rfq-management" className={isActive("/rfq-management")}>
-          RFQ Management
-        </Link>
-        <Link to="/search-vendors" className={isActive("/search-vendors")}>
-          Search Vendors
-        </Link>
-      </div>
-      <div className="pr-2">
-        <UserRound/>
-      </div>
-
-      <div className="lg:hidden">
-        <Menu
-          className="h-6 w-6 cursor-pointer"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        /> 
-      </div>
-
-      {isMenuOpen && (
-        <div className="absolute top-16 right-4 bg-white border border-gray-200 shadow-lg rounded-lg p-4 flex flex-col gap-2 z-50">
-          <Link
-            to="/dashboard"
-            className={isActive("/dashboard")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Dashboard
-          </Link>
-          <Link
-            to="/rfq-creation"
-            className={isActive("/rfq-creation")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            RFQ Creation
-          </Link>
-          <Link
-            to="/rfq-management"
-            className={isActive("/rfq-management")}
-            onClick={() => setIsMenuOpen(false)}
-          >
-            RFQ Management
-          </Link>
-        </div>
-      )}
-    </div>
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+          isActive
+            ? "text-indigo-600 bg-indigo-50"
+            : "text-slate-600 hover:text-indigo-600 hover:bg-indigo-50"
+        }`
+      }
+    >
+      {icon}
+      {children}
+    </NavLink>
   );
 }
+
+function Header() {
+  return (
+    <header className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <div className="flex items-center space-x-2">
+            <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-500 text-transparent bg-clip-text">
+              <img
+                src="/logo.webp"
+                alt="workwise logo"
+                className="h-12 w-auto"
+              />
+            </div>
+          </div>
+          <nav className="hidden md:flex space-x-8">
+            <NavItem
+              to="/rfq-management"
+              icon={<FileText className="w-4 h-4 mr-1.5" />}
+            >
+              RFQ management
+            </NavItem>
+            <NavItem
+              to="/technical-evaluation"
+              icon={<Settings className="w-4 h-4 mr-1.5" />}
+            >
+              Technical Evaluation
+            </NavItem>
+            <NavItem
+              to="/compare-quotes"
+              icon={<BarChart3 className="w-4 h-4 mr-1.5" />}
+            >
+              Compare quotes
+            </NavItem>
+          </nav>
+          <div className="flex items-center space-x-4">
+            <button className="p-2 text-slate-600 hover:text-indigo-600 relative">
+              <Bell className="w-5 h-5" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+            </button>
+            <button className="flex items-center space-x-2 px-3 py-1.5 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors">
+              <User className="w-4 h-4" />
+              <span className="text-sm font-medium">John Doe</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
+
+export default Header;
