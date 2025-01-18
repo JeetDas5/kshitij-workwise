@@ -10,7 +10,7 @@ export default function Header() {
       : "text-gray-700 hover:text-blue-500";
 
   return (
-    <div className="flex justify-between items-center w-full border-2 p-2 m-4 border-black rounded-lg h-16 font-poppins">
+    <div className="flex justify-between items-center border-2 p-2 m-4 border-black rounded-lg h-16 font-poppins">
       <div className="font-bold text-xl">
         <img src="/logo.webp" alt="logo" className="h-12 w-auto"/>
       </div>
@@ -26,6 +26,9 @@ export default function Header() {
         </Link>
         <Link to="/rfq-management" className={isActive("/rfq-management")}>
           RFQ Management
+        </Link>
+        <Link to="/search-vendors" className={isActive("/search-vendor")}>
+          Search Vendors
         </Link>
       </div>
       <div className="flex items-center gap-2">
