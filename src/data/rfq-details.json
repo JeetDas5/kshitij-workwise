@@ -1,0 +1,78 @@
+{
+    "402535": {
+      "id": "402535",
+      "products": [
+        {
+          "name": "FLANGE (MS) /Mild Steel Flange",
+          "size": "1",
+          "specification": "1",
+          "quantity": "1-1",
+          "currentLowest": "--",
+          "tds": "N/A",
+          "qap": "N/A",
+          "comments": "N/A",
+          "hasAttachments": true
+        }
+      ],
+      "contact": {
+        "companyName": "Jeet Company",
+        "contactPerson": "Jeet Das",
+        "email": "jeetdas1508@gmail.com",
+        "phone": "9932880074"
+      },
+      "reverseAuction": "Enabled",
+      "procurementEndDate": "2025-02-05",
+      "terms": [
+        {
+          "title": "Manufacturing Clearance",
+          "description": "All items shall be manufactured after providing you with manufacturing clearance"
+        },
+        {
+          "title": "Inspection",
+          "description": "Materials will be inspected at your works by approved Third Party Inspection Agency (TPIA) as per Approved QAP only."
+        },
+        {
+          "title": "Testing Certificates",
+          "description": "The Manufacturing Test certificate, Internal Inspection Report by TPIA & All materials Test Certificate shall be dispatched by the vendor to our Office along with the materials without any extra charges. All Testing shall be carried out as per approved QAP/ITP"
+        }
+      ]
+    },
+    "402536": {
+      "id": "402536",
+      "products": [
+        {
+          "name": "Steel Pipe",
+          "size": "2",
+          "specification": "Schedule 40",
+          "quantity": "50",
+          "currentLowest": "$45/unit",
+          "tds": "Available",
+          "qap": "Required",
+          "comments": "Urgent delivery needed",
+          "hasAttachments": true
+        }
+      ],
+      "contact": {
+        "companyName": "Steel Solutions Ltd",
+        "contactPerson": "Sarah Johnson",
+        "email": "sarah.j@steelsolutions.com",
+        "phone": "9876543210"
+      },
+      "reverseAuction": "Disabled",
+      "procurementEndDate": "2025-03-15",
+      "terms": [
+        {
+          "title": "Manufacturing Clearance",
+          "description": "All items shall be manufactured after providing you with manufacturing clearance"
+        },
+        {
+          "title": "Inspection",
+          "description": "Materials will be inspected at your works by approved Third Party Inspection Agency (TPIA) as per Approved QAP only."
+        },
+        {
+          "title": "Testing Certificates",
+          "description": "The Manufacturing Test certificate, Internal Inspection Report by TPIA & All materials Test Certificate shall be dispatched by the vendor to our Office along with the materials without any extra charges. All Testing shall be carried out as per approved QAP/ITP"
+        }
+      ]
+    }
+  }

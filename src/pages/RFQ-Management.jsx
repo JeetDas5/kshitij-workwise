@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
-import { useState } from 'react';
-import { Search, Filter, ChevronDown, Eye, PlusCircle, FileText, Clock, Calendar, Bell } from 'lucide-react';
-import rfqData from '../data/rfq-data.json';
-import Header from '../components/global/Header';
+import { useState } from "react";
+import {
+  Search,
+  Filter,
+  ChevronDown,
+  Eye,
+  PlusCircle,
+  FileText,
+  Clock,
+  Calendar,
+  Bell,
+} from "lucide-react";
+import rfqData from "../data/rfq-data.json";
+import Header from "../components/global/Header";
 import { useNavigate } from "react-router-dom";
 
 const StatCard = ({ title, value, change, negative, positive }) => {
@@ -11,7 +21,15 @@ const StatCard = ({ title, value, change, negative, positive }) => {
       <h3 className="text-sm font-medium text-slate-500 mb-2">{title}</h3>
       <div className="flex items-end justify-between">
         <p className="text-2xl font-semibold text-slate-900">{value}</p>
-        <span className={`text-sm font-medium ${negative ? 'text-red-600' : positive ? 'text-green-600' : 'text-green-600'}`}>
+        <span
+          className={`text-sm font-medium ${
+            negative
+              ? "text-red-600"
+              : positive
+              ? "text-green-600"
+              : "text-green-600"
+          }`}
+        >
           {change}
         </span>
       </div>
@@ -41,24 +59,25 @@ const SelectBox = ({ label, options, onChange, value }) => {
 
 const StatusBadge = ({ status }) => {
   const statusStyles = {
-    active: 'bg-green-100 text-green-800',
-    pending: 'bg-yellow-100 text-yellow-800',
-    completed: 'bg-blue-100 text-blue-800',
+    active: "bg-green-100 text-green-800",
+    pending: "bg-yellow-100 text-yellow-800",
+    completed: "bg-blue-100 text-blue-800",
   };
 
   return (
-    <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${statusStyles[status]}`}>
+    <span
+      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${statusStyles[status]}`}
+    >
       {status.charAt(0).toUpperCase() + status.slice(1)}
     </span>
   );
 };
 
 const RFQTable = ({ data }) => {
-
   const navigate = useNavigate();
 
   const handleViewClick = (id) => {
-    navigate(`/view/${id}`);
+    navigate(`/rfq-management-details?rfqId=${id}`);
   };
 
   return (
@@ -67,24 +86,41 @@ const RFQTable = ({ data }) => {
         <table className="w-full">
           <thead>
             <tr className="bg-slate-50">
-              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">RFQ Details</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">Timeline</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">Type</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">Status</th>
-              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">Actions</th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                RFQ Details
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                Timeline
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                Type
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                Status
+              </th>
+              <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200">
             {data.map((rfq) => (
-              <tr key={rfq.id} className="group hover:bg-slate-50 transition-colors">
+              <tr
+                key={rfq.id}
+                className="group hover:bg-slate-50 transition-colors"
+              >
                 <td className="px-6 py-4">
                   <div className="flex items-start space-x-3">
                     <div className="flex-shrink-0 w-10 h-10 bg-indigo-50 rounded-lg flex items-center justify-center">
                       <FileText className="w-5 h-5 text-indigo-600" />
                     </div>
                     <div>
-                      <div className="font-medium text-slate-900">#{rfq.id}</div>
-                      <div className="text-sm text-slate-500">{rfq.product}</div>
+                      <div className="font-medium text-slate-900">
+                        #{rfq.id}
+                      </div>
+                      <div className="text-sm text-slate-500">
+                        {rfq.product}
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -103,7 +139,9 @@ const RFQTable = ({ data }) => {
                 <td className="px-6 py-4">
                   <div className="text-sm text-slate-600">
                     <div>{rfq.type}</div>
-                    <div className="text-xs text-slate-500">RA: {rfq.reverseAuction}</div>
+                    <div className="text-xs text-slate-500">
+                      RA: {rfq.reverseAuction}
+                    </div>
                   </div>
                 </td>
                 <td className="px-6 py-4">
@@ -111,7 +149,10 @@ const RFQTable = ({ data }) => {
                 </td>
                 <td className="px-6 py-4">
                   <div className="flex items-center space-x-3">
-                    <button className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center" onClick={() => handleViewClick(rfq.id)}>
+                    <button
+                      className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center"
+                      onClick={() => handleViewClick(rfq.id)}
+                    >
                       <Eye className="w-4 h-4 mr-1" />
                       View
                     </button>
@@ -134,9 +175,9 @@ const RFQTable = ({ data }) => {
 };
 
 const RFQManagement = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [rfqType, setRfqType] = useState('');
-  const [status, setStatus] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
+  const [rfqType, setRfqType] = useState("");
+  const [status, setStatus] = useState("");
   const [filteredData, setFilteredData] = useState(rfqData.rfqs);
 
   const handleSearch = (e) => {
@@ -151,29 +192,41 @@ const RFQManagement = () => {
   };
 
   const filterData = (searchQuery, rfqType, status) => {
-    const filtered = rfqData.rfqs.filter(rfq => {
-      const matchesSearch = rfq.id.toLowerCase().includes(searchQuery) || rfq.product.toLowerCase().includes(searchQuery);
-      const matchesType = rfqType ? rfq.type.toLowerCase() === rfqType.toLowerCase() : true;
-      const matchesStatus = status ? rfq.status.toLowerCase() === status.toLowerCase() : true;
+    const filtered = rfqData.rfqs.filter((rfq) => {
+      const matchesSearch =
+        rfq.id.toLowerCase().includes(searchQuery) ||
+        rfq.product.toLowerCase().includes(searchQuery);
+      const matchesType = rfqType
+        ? rfq.type.toLowerCase() === rfqType.toLowerCase()
+        : true;
+      const matchesStatus = status
+        ? rfq.status.toLowerCase() === status.toLowerCase()
+        : true;
       return matchesSearch && matchesType && matchesStatus;
     });
 
     setFilteredData(filtered);
   };
 
-  
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <Header/>
+      <Header />
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
         <StatCard title="Active RFQs" value="24" change="+12%" />
         <StatCard title="Pending Quotes" value="156" change="-8%" negative />
         <StatCard title="Total Projects" value="45" change="+5%" />
-        <StatCard title="Avg. Response Time" value="2.4 days" change="-15%" positive />
+        <StatCard
+          title="Avg. Response Time"
+          value="2.4 days"
+          change="-15%"
+          positive
+        />
       </div>
 
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-semibold text-slate-900">RFQ Management</h1>
+        <h1 className="text-2xl font-semibold text-slate-900">
+          RFQ Management
+        </h1>
         <div className="flex space-x-4">
           <button
             onClick={handleFilter}
@@ -203,13 +256,13 @@ const RFQManagement = () => {
           </div>
           <SelectBox
             label="RFQ Type"
-            options={['Budgetary', 'Firm']}
+            options={["Budgetary", "Firm"]}
             value={rfqType}
             onChange={(e) => setRfqType(e.target.value)}
           />
           <SelectBox
             label="Status"
-            options={['Active', 'Pending', 'Completed']}
+            options={["Active", "Pending", "Completed"]}
             value={status}
             onChange={(e) => setStatus(e.target.value)}
           />
