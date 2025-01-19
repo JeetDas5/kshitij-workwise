@@ -137,7 +137,7 @@ function Header() {
 
             <button className="flex items-center space-x-2 px-3 py-1.5 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors">
               <User className="w-4 h-4" />
-              <span className="text-sm font-medium">Jeet Das</span>
+              <span className="text-sm font-medium">Username</span>
             </button>
           </div>
         </div>
