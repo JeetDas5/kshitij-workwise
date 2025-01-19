@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/Dashboard";
 import RfqCreation from "./pages/RFQ-Creation";
 import RfqManagement from "./pages/RFQ-Management";
-import RfqManagementDetails from "./pages/RFQ-Management-details";
+import RfqManagementDetails from "./pages/RFQ-Management-Details";
 import MagicSearch from "./pages/Magic-Search";
 import VendorSearch from "./pages/Vendor-Search";
 
