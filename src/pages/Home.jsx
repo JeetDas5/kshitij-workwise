@@ -1,6 +1,7 @@
 import {Users, Zap, Shield, ArrowRight } from "lucide-react";
 import Header from "../components/global/Header";
 import Footer from "../components/global/Footer";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -105,12 +106,12 @@ function Home() {
             Join thousands of businesses that trust LetsWorkWise for their RFQ
             management.
           </p>
-          <button
-            onClick={() => (window.location.href = "/dashboard")}
+          <Link
+            to={"/dashboard"}
             className="bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors inline-flex items-center"
           >
             Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
-          </button>
+          </Link>
         </div>
       </section>      
       <Footer/>
