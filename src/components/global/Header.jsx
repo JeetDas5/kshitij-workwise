@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
-  BarChart3,
   Bell,
   User,
   FileText,
@@ -158,10 +157,10 @@ function Header() {
               Dashboard
             </NavItem>
             <NavItem
-              to="/compare-quotes"
-              icon={<BarChart3 className="w-4 h-4 mr-1.5" />}
+              to="/search-vendor"
+              icon={<Search className="w-4 h-4 mr-1.5" />}
             >
-              Compare quotes
+             Search Vendor
             </NavItem>
           </div>
         )}

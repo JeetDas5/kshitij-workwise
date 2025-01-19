@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import rfqData from "../data/rfq-data.json";
 import Header from "../components/global/Header";
+import Footer from "../components/global/Footer";
 import { Link, useNavigate } from "react-router-dom";
 
 const StatCard = ({ title, value, change, negative, positive }) => {
@@ -270,6 +271,7 @@ const RFQManagement = () => {
       </div>
 
       <RFQTable data={filteredData} />
+      <Footer/>
     </main>
   );
 };
