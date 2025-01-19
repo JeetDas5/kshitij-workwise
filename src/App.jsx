@@ -6,7 +6,7 @@ import RfqCreation from "./pages/RFQ-Creation";
 import RfqManagement from "./pages/RFQ-Management";
 import MagicSearch from "./pages/Magic-Search";
 import VendorSearch from "./pages/Vendor-Search";
-import RFQManagementDetails from "./pages/RFQ-Management-details";
+import RFQManagementDetails from "./pages/RFQ-management-details";
 
 function App() {
   return (
