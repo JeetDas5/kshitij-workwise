@@ -8,6 +8,7 @@ import {
   Settings,
   Menu,
   Grid2x2,
+  Search,
 } from "lucide-react";
 
 function NavItem({ to, children, icon }) {
@@ -61,6 +62,12 @@ function Header() {
               icon={<FileText className="w-4 h-4 mr-1.5" />}
             >
               RFQ management
+            </NavItem>
+            <NavItem
+              to="/search-vendor"
+              icon={<Search className="w-4 h-4 mr-1.5" />}
+            >
+             Search Vendor
             </NavItem>
           </nav>
 
