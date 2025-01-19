@@ -4,7 +4,7 @@ import rfqsData from "../data/rfq-details.json";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../components/global/Loader";
 
-function RfqManagementDetails() {
+const RfqManagementDetails = ()=> {
   const [rfq, setRfq] = useState(null);
   const [error, setError] = useState("");
   const [searchParams] = useSearchParams();
