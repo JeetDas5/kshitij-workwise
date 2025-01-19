@@ -1,7 +1,15 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { BarChart3, Bell, User, FileText, Settings } from "lucide-react";
+import {
+  BarChart3,
+  Bell,
+  User,
+  FileText,
+  Settings,
+  Menu,
+  Grid2x2,
+} from "lucide-react";
 
 function NavItem({ to, children, icon }) {
   return (
@@ -22,22 +30,91 @@ function NavItem({ to, children, icon }) {
 }
 
 function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [notificationsOpen, setNotificationsOpen] = useState(false);
+
+  const notifications = [
+    { id: 1, message: "New RFQ received" },
+    { id: 2, message: "Dashboard report updated" },
+    { id: 3, message: "Quote comparison completed" },
+  ];
 
   return (
     <header className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-indigo-500 text-transparent bg-clip-text">
-              <img
-                src="/logo.webp"
-                alt="workwise logo"
-                className="h-12 w-auto"
-              />
-            </div>
+          <div className="flex items-center">
+            <img src="/logo.webp" alt="workwise logo" className="h-12 w-auto" />
           </div>
+
           <nav className="hidden md:flex space-x-8">
+            <NavItem to="/" icon={<FileText className="w-4 h-4 mr-1.5" />}>
+              Home
+            </NavItem>
+            <NavItem
+              to="/dashboard"
+              icon={<Grid2x2 className="w-4 h-4 mr-1.5" />}
+            >
+              Dashboard
+            </NavItem>
+            <NavItem
+              to="/rfq-management"
+              icon={<FileText className="w-4 h-4 mr-1.5" />}
+            >
+              RFQ management
+            </NavItem>
+          </nav>
+
+          <button
+            className="md:hidden p-2 text-slate-600 hover:text-indigo-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <Menu className="w-6 h-6" />
+          </button>
+
+          <div className="hidden md:flex items-center space-x-4 relative">
+            <button
+              className="p-2 text-slate-600 hover:text-indigo-600 relative"
+              onClick={() => setNotificationsOpen(!notificationsOpen)}
+            >
+              <Bell className="w-5 h-5" />
+              {notifications.length > 0 && (
+                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+              )}
+            </button>
+            {notificationsOpen && (
+              <div className="absolute top-12 right-0 w-80 bg-white shadow-lg border border-slate-200 rounded-lg p-4 z-20">
+                <h4 className="text-lg font-semibold text-slate-800 mb-2">
+                  Notifications
+                </h4>
+                <ul>
+                  {notifications.length > 0 ? (
+                    notifications.map((notification) => (
+                      <li
+                        key={notification.id}
+                        className="text-slate-700 py-2 border-b last:border-none"
+                      >
+                        {notification.message}
+                      </li>
+                    ))
+                  ) : (
+                    <li className="text-slate-500 py-2">
+                      No new notifications
+                    </li>
+                  )}
+                </ul>
+              </div>
+            )}
+
+            <button className="flex items-center space-x-2 px-3 py-1.5 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors">
+              <User className="w-4 h-4" />
+              <span className="text-sm font-medium">Jeet Das</span>
+            </button>
+          </div>
+        </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white shadow-lg rounded-lg mt-2 py-2 flex flex-col justify-center items-center">
             <NavItem
               to="/rfq-management"
               icon={<FileText className="w-4 h-4 mr-1.5" />}
@@ -45,10 +122,10 @@ function Header() {
               RFQ management
             </NavItem>
             <NavItem
-              to="/technical-evaluation"
+              to="/dashboard"
               icon={<Settings className="w-4 h-4 mr-1.5" />}
             >
-              Technical Evaluation
+              Dashboard
             </NavItem>
             <NavItem
               to="/compare-quotes"
@@ -56,51 +133,8 @@ function Header() {
             >
               Compare quotes
             </NavItem>
-          </nav>
-          <div className="relative">
-            <button
-              onMouseEnter={() => setDropdownOpen(!dropdownOpen)}
-              onMouseLeave={() => setDropdownOpen(false)}
-              className="flex items-center space-x-2 px-3 py-1.5 bg-indigo-50 rounded-full text-indigo-600 hover:bg-indigo-100 transition-colors"
-            >
-              <User className="w-4 h-4" />
-              <span className="text-sm font-medium">John Doe</span>
-            </button>
-            {/* Dropdown */}
-            {dropdownOpen && (
-              <div
-                className="absolute right-0 mt-2 w-48 bg-white border border-slate-200 rounded-lg shadow-lg py-2"
-                onMouseLeave={() => setDropdownOpen(false)}
-              >
-                <NavItem
-                  to="/rfq-management"
-                  icon={<FileText className="w-4 h-4 mr-1.5" />}
-                >
-                  RFQ management
-                </NavItem>
-                <NavItem
-                  to="/technical-evaluation"
-                  icon={<Settings className="w-4 h-4 mr-1.5" />}
-                >
-                  Technical Evaluation
-                </NavItem>
-                <NavItem
-                  to="/compare-quotes"
-                  icon={<BarChart3 className="w-4 h-4 mr-1.5" />}
-                >
-                  Compare quotes
-                </NavItem>
-              </div>
-            )}
           </div>
-          {/* Notification */}
-          <div className="flex items-center space-x-4">
-            <button className="p-2 text-slate-600 hover:text-indigo-600 relative">
-              <Bell className="w-5 h-5" />
-              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-            </button>
-          </div>
-        </div>
+        )}
       </div>
     </header>
   );

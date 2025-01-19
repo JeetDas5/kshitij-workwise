@@ -13,7 +13,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index path='/' element={<Home/>} />
-        <Route path='/home' element={<Home/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
         <Route path='/rfq-creation' element={<RfqCreation/>} />
         <Route path='/rfq-management' element={<RfqManagement/>} />

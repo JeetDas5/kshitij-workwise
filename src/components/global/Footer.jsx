@@ -1,11 +1,84 @@
-export default function Footer(){
+export default function Footer() {
     return (
-        <div className="flex justify-between items-center p-2 font-poppins flex-col h-max sm:flex-row md:h-16">
-            <div className="flex flex-col items-start p-4">
-                <span>Copyrights © 2024, workwise All rights reserved </span>
-                <span>Digital Partner<span><a href="https://www.indusnet.co.in/" target="_blank" className="hover:text-[#5046e5]"> Indus Net Technologies</a></span></span>
+        <footer className="bg-gray-50 border-t border-gray-100 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <div className="flex items-center">
+                <span className="ml-2 text-lg font-bold text-blue-900">
+                  WorkWise
+                </span>
+              </div>
+              <p className="mt-4 text-gray-600">
+                Making RFQ management smarter and more efficient.
+              </p>
             </div>
-            <div><span><a href="" className="hover:text-[#5046e5]">Privacy Policy</a></span> | <span><a href="" className="hover:text-[#5046e5]">Terms of Use</a></span> | <span><a href="https://www.linkedin.com" target="_blank" className="hover:text-[#5046e5]">LinkedIn</a></span></div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-4">Product</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Features
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Pricing
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Security
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-4">Company</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-blue-900 mb-4">Legal</h3>
+              <ul className="space-y-2">
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Terms
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-600 hover:text-blue-600">
+                    Cookie Policy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-200 text-center text-gray-600">
+            © 2025 LetsWorkWise. All rights reserved.
+          </div>
         </div>
-    ) 
-}
+      </footer>
+    );
+  }
+  
