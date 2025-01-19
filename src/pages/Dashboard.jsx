@@ -233,7 +233,7 @@ function Dashboard() {
         </div>
         <Link
           to={"/rfq-creation"}
-          className="mt-14 bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+          className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
         >
           Create New RFQ
         </Link>

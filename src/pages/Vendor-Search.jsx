@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useMemo } from "react";
 import { Search, MapPin, Star, Plus } from "lucide-react";
 import Footer from "../components/global/Footer";
