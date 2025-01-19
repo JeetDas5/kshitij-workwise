@@ -87,7 +87,7 @@ const RFQTable = ({ data }) => {
           <thead>
             <tr className="bg-slate-50">
               <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
-                RFQ Details
+                RFQ No. And Products
               </th>
               <th className="px-6 py-4 text-left text-sm font-semibold text-slate-900">
                 Timeline
