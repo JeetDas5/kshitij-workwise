@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import rfqData from "../data/rfq-data.json";
 import Header from "../components/global/Header";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const StatCard = ({ title, value, change, negative, positive }) => {
   return (
@@ -77,6 +77,7 @@ const RFQTable = ({ data }) => {
   const navigate = useNavigate();
 
   const handleViewClick = (id) => {
+    
     navigate(`/rfq-management-details?rfqId=${id}`);
   };
 
@@ -235,10 +236,10 @@ const RFQManagement = () => {
             <Filter className="w-4 h-4" />
             <span>Filter</span>
           </button>
-          <button className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors flex items-center space-x-2">
+          <Link to="/rfq-creation" className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors flex items-center space-x-2">
             <PlusCircle className="w-4 h-4" />
             <span>Create RFQ</span>
-          </button>
+          </Link>
         </div>
       </div>
 

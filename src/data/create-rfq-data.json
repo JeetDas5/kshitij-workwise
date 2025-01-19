@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Product A",
+      "specifications": "Material: Steel, Grade: 304",
+      "quantity": 100,
+      "unit": "kg",
+      "tds": null,
+      "qap": null,
+      "comments": "Urgent requirement"
+    },
+    {
+      "name": "Product B",
+      "specifications": "Material: Aluminum, Grade: 6061",
+      "quantity": 50,
+      "unit": "kg",
+      "tds": null,
+      "qap": null,
+      "comments": "Standard quality required"
+    }
+  ]
+  
