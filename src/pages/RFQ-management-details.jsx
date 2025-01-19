@@ -3,6 +3,8 @@ import { FileText, Calendar, Building2, Mail, Phone } from "lucide-react";
 import rfqsData from "../data/rfq-details.json";
 import { useSearchParams } from "react-router-dom";
 import Loader from "../components/global/Loader";
+import Header from "../components/global/Header";
+import Footer from "../components/global/Footer";
 
 const RFQManagementDetails = ()=> {
   const [rfq, setRfq] = useState(null);
@@ -49,6 +51,7 @@ const RFQManagementDetails = ()=> {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 to-blue-100">
+      <Header/>
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex items-center justify-between mb-12">
           <h1 className="text-3xl font-bold text-sky-900 flex items-center gap-2 ml-5">
@@ -218,6 +221,7 @@ const RFQManagementDetails = ()=> {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
