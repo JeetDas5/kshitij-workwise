@@ -8,7 +8,17 @@ import {
   Menu,
   Grid2x2,
   Search,
+  ChartNoAxesGantt,
+  FilePlus2
 } from "lucide-react";
+
+import {
+  NavigationMenu,
+  NavigationMenuList,
+  NavigationMenuItem,
+  NavigationMenuTrigger,
+  NavigationMenuContent
+} from "../ui/navigation-menu";
 
 function NavItem({ to, children, icon }) {
   return (
@@ -47,27 +57,41 @@ function Header() {
           </div>
 
           <nav className="hidden md:flex space-x-8">
-            <NavItem to="/" icon={<FileText className="w-4 h-4 mr-1.5" />}>
+          <NavItem to="/" icon={<FileText className="w-4 h-4 mr-1.5" />}>
               Home
             </NavItem>
-            <NavItem
+
+          <NavItem
               to="/dashboard"
               icon={<Grid2x2 className="w-4 h-4 mr-1.5" />}
             >
-              Dashboard
+            Dashboard
             </NavItem>
-            <NavItem
-              to="/rfq-management"
-              icon={<FileText className="w-4 h-4 mr-1.5" />}
-            >
-              RFQ management
+        <NavigationMenu>
+        <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="text-gray-600">
+            <FileText className="w-4 h-4 mr-1.5" />
+            RFQ
+          </NavigationMenuTrigger>
+          <NavigationMenuContent className="text-left bg-white text-gray-600">
+            <NavItem to="/rfq-management" icon={<ChartNoAxesGantt />}>
+              Manage
             </NavItem>
-            <NavItem
+            <br /><hr/>
+            <NavItem to="/rfq-creation" icon={<FilePlus2 />}>
+              Creation
+            </NavItem>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavItem
               to="/search-vendor"
               icon={<Search className="w-4 h-4 mr-1.5" />}
             >
              Search Vendor
             </NavItem>
+      </NavigationMenuList>
+    </NavigationMenu>
           </nav>
 
           <button
