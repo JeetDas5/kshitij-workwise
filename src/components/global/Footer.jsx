@@ -47,8 +47,8 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-gray-600 hover:text-blue-600">
-                    Contact
+                  <a href="https://www.linkedin.com/company/workwise11" className="text-gray-600 hover:text-blue-600">
+                    Linked In
                   </a>
                 </li>
               </ul>
