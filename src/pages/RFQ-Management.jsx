@@ -77,7 +77,6 @@ const RFQTable = ({ data }) => {
   const navigate = useNavigate();
 
   const handleViewClick = (id) => {
-    
     navigate(`/rfq-management-details?rfqId=${id}`);
   };
 
@@ -236,7 +235,10 @@ const RFQManagement = () => {
             <Filter className="w-4 h-4" />
             <span>Filter</span>
           </button>
-          <Link to="/rfq-creation" className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors flex items-center space-x-2">
+          <Link
+            to="/rfq-creation"
+            className="px-4 py-2 bg-indigo-600 text-white rounded-lg shadow-sm hover:bg-indigo-700 transition-colors flex items-center space-x-2"
+          >
             <PlusCircle className="w-4 h-4" />
             <span>Create RFQ</span>
           </Link>
@@ -271,7 +273,7 @@ const RFQManagement = () => {
       </div>
 
       <RFQTable data={filteredData} />
-      <Footer/>
+      <Footer />
     </main>
   );
 };

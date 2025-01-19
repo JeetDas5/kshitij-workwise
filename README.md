@@ -20,7 +20,7 @@ This project is a frontend application for **Workwise Company**, designed to man
 - **[Lucide Icons](https://lucide.dev/)**: Icon library for a clean and modern UI.
 
 ### Deployment
-- **[Vercel](https://vercel.com/)**: Hosting platform for fast and reliable deployment.
+- **[Netlify](https://app.netlify.com/)**: Hosting platform for fast and reliable deployment.
 
 ---
 
