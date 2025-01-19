@@ -21,6 +21,7 @@ export default function RfqCreation() {
         unit: "",
         tds: null,
         qap: null,
+        clause: null,
         comments: "",
       },
     ]);
@@ -100,6 +101,9 @@ export default function RfqCreation() {
                   Quality Assurance Plan (QAP)
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-medium border-2">
+                  Add Clause
+                </th>
+                <th className="px-6 py-4 text-left text-sm font-medium border-2">
                   Product Comments
                 </th>
                 <th className="px-6 py-4 text-left text-sm font-medium border-2">
@@ -157,6 +161,17 @@ export default function RfqCreation() {
                         updateRow(index, "qap", e.target.files[0])
                       }
                       className="text-indigo-500 p-4 hover:text-indigo-600 rounded-lg transition-all duration-200 text-sm font-medium w-60 border-2"
+                    />
+                  </td>
+                  <td className="px-6 py-4">
+                    <input
+                      type="text"
+                      value={product.clause}
+                      placeholder="Add Clause"
+                      onChange={(e) =>
+                        updateRow(index, "comments", e.target.value)
+                      }
+                      className="px-3 py-2 border border-indigo-900/50 rounded-lg text-sm text-gray-600 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all duration-200"
                     />
                   </td>
                   <td className="px-6 py-4">
